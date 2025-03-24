@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clawer™ - About Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: url('background.jpeg') center/cover no-repeat, rgba(255, 255, 255, 0.3);
+            background-blend-mode: overlay;
+            backdrop-filter: blur(10px);
+            color: #004080;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .header {
+            width: 75%;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            position: fixed;
+            top: -130px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .header-logo {
+            font-weight: 900;
+            font-size: 1.1em;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: #004080;
+            font-size: 1.3em;
+            font-weight: bolder;
+            transition: 0.3s;
+            margin-right: 50px;
+        }
+        .nav-buttons a:hover {
+            color: yellow;
+        }
+
+        .about-container {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            padding: 40px;
+            width: 60%;
+            margin: 150px auto;
+            text-align: left;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        /* New Sections: About Company & About Founder */
+        .info-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px auto;
+            width: 80%;
+            text-align: left;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .info-text {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .info-image {
+            width: 40%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .info-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Scroll animation active state */
+        .info-section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .footer {
+            background-color: #275cd652; 
+            color: rgb(0, 0, 0);
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            margin-top: 50px;
+        }
+        
+        .footer h3 {
+            color: whitesmoke;
+            padding: 5px;
+            font-size: 18px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            font-weight: bolder;
+        }
+
+        .footer p {
+            color: white;
+            margin-top: 0%;
+            font-size: 13px;
+        }
+
+        .footer p2 {
+            color: rgb(0, 0, 0);
+            margin-top: 0%;
+            font-size: 13px;
+        }
+        .grey {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1999;
+        }
+        @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.fade-out {
+    animation: fadeOut 0.7s ease-in-out;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+    </style>
+</head>
+<body class="fade-in">
+
+    <div class="header">
+        <div class="header-logo">Clawer™</div>
+        <div class="nav-buttons">
+            <a href="index.html" onclick="playClick()">Home</a>
+            <a href="about.html" onclick="playClick()">About</a>
+            <a href="products.html" onclick="playClick()">Products</a>
+            <a href="checkout.html" onclick="playClick()">Checkout</a>
+        </div>
+    </div>
+
+    <section class="about-container">
+        <h1>About Clawer™</h1>
+        <p>
+            Founded with the mission to revolutionize hydration, Clawer™ is not just water—it's an experience.  
+            Our scientifically refined unflavored colored water provides not only physical refreshment  
+            but also a sensory experience that stimulates the mind.  
+        </p>
+        <p>
+            With a commitment to purity, innovation, and health, Clawer™ is designed for those  
+            who seek more than just hydration. Our carefully curated formula ensures  
+            that every sip brings balance to your body and clarity to your mind.
+        </p>
+    </section>
+
+    <!-- About Company Section -->
+    <div class="info-section" id="about-company">
+        <div class="info-text">
+            <h2>About the Company</h2>
+            <p><strong>Mission:</strong> To innovate products that are deemed too perfect to be changed.</p>
+            <p><strong>Vision:</strong> To provide and constantly innovate on quote on quote perfect products.</p>
+            <p>CL*C Intl is a company that aims to innovate. Many things seem too perfect to be changed, but in this company, we believe that everything can be improved. Clawer™ is the first step in our vision.</p>
+        </div>
+        <div class="info-image">
+            <img src="CL_LOGO.png" alt="Company Image">
+        </div>
+    </div>
+
+    <!-- About Founder Section -->
+    <div class="info-section" id="about-founder" style="flex-direction: row-reverse;">
+        <div class="info-text">
+            <h2>About the Founder</h2>
+            <p>Neil Anthony Torres is our founder. He had one goal in his mind—and it was to be different. Many companies stick with the conventional, but our founder does not follow that principle. Being different allows you to be what you want to be. Which allows you to standout in the competetive buisness scene.</p>
+        </div>
+        <div class="info-image">
+            <img src="founder.png" alt="Founder Image">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <h3>Do you have any concerns?</h3>
+        <p><strong>Contact No:</strong> (+63) 9108673820</br>
+        <strong>Email:</strong> neil061809@gmail.com </br>
+        <strong>Address:</strong> Barangay Marawoy, Lipa City, Batangas, Philippines</br> </p>
+        <p2> <strong> </br> © 2025 Clawer™ by CL*C intl. All Rights Reserved. </strong> </p2>
+    </div>
+
+    <script>
+        // Scroll-triggered animation for About sections
+        function revealOnScroll() {
+            let sections = document.querySelectorAll(".info-section");
+            let windowHeight = window.innerHeight;
+
+            sections.forEach(section => {
+                let sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < windowHeight - 100) {
+                    section.classList.add("show");
+                }
+            });
+        }
+            function playClick() {
+                const audio = new Audio("btn.mp3");
+                audio.play();
+        }
+    
+
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll("a");
+        links.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault(); // Prevent default navigation
+                let href = this.getAttribute("href");
+                
+                document.body.classList.add("fade-out");
+                
+                setTimeout(() => {
+                    window.location.href = href; // Navigate after fade-out
+                }, 700); // Match the fade-out animation duration
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>

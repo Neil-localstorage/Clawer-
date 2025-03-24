@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clawer™ - Home</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       
+        body {
+            font-family: Arial, sans-serif;
+            color: #004080;
+            text-align: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: -1;
+        }
+
+     
+        header {
+            width: 75%;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .header-logo {
+            font-size: 1.1em;
+            font-weight: 900;
+            color: #004080;
+        }
+
+        
+        .nav-buttons a {
+            text-decoration: none;
+            color: #004080;
+            font-size: 1.3em;
+            font-weight: bolder;
+            transition: 0.3s;
+            margin-right: 50px;
+        }
+        .nav-buttons a:hover {
+            color: yellow;
+        }
+
+       
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+  
+        .hero-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero h1 {
+            font-size: 40px;
+            font-weight: bold;
+            color: #0044cc;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: rgb(93, 64, 64);
+            font-size: 20px;
+            font-weight: bold;
+            max-width: 800px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+      
+        .cta-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: #0044cc;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: #002288;
+        }
+
+        
+        .product-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 50px 20px;
+            border-radius: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+        }
+
+       
+        .product-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-section h2 {
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(20, 9, 58);
+
+            font-weight: bold;
+            color: #0044cc;
+            margin-bottom: 20px;
+        }
+        .product-section p {
+            color: black;
+        }
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+      
+
+        .footer {
+            background-color: #2b5cce52; 
+            color: rgb(0, 0, 0);
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            margin-top: 50px;
+        }
+        
+        .footer h3 {
+            color: whitesmoke;
+            padding: 5px;
+            font-size: 18px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            font-weight: bolder;
+        }
+
+        .footer p {
+            color: white;
+            margin-top: 0%;
+        }
+
+        .footer p2 {
+            color: rgb(0, 0, 0);
+            margin-top: 0%;
+        }
+
+        @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.fade-out {
+    animation: fadeOut 0.7s ease-in-out;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+    </style>
+</head>
+<body class="fade-in">
+
+    
+    <div class="overlay"></div>
+
+   
+    <header class="header">
+        <div class="header-logo">Clawer™</div>
+        <div class="nav-buttons">
+            <a href ="index.html" onclick="playClick()">Home</a>
+            <a href="about.html" onclick="playClick()">About</a>
+            <a href="products.html" onclick="playClick()">Products</a>
+            <a href="checkout.html" onclick="playClick()">Checkout</a>
+       
+    </header>
+
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Clawer™ - Hydrate Your Body & Mind</h1>
+            <p>
+                <strong> Clawer™ is a water that does not only hydrate your body but also your mind.
+                It gives your mind a perspective where it reenacts the smell and color of water
+                for a healthier you. </strong>
+            </br>
+            </p>
+        </br>
+            <a href="products.html" class="cta-button" onclick="playClick()">Shop Now</a>
+        </div>
+    </section>
+
+    
+    <section class="product-section">
+        <h2>Our Products</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="product1.webp" alt="Product 1">
+            </br>
+                <p> <b>    </br> Refreshing, color-infused water for a unique experience. </b> </p>
+            </div>
+            <div class="product">
+                <img src="product2.webp" alt="Product 2">
+            </br>
+                <p> <b>    </br> Purified hydration, naturally enhanced for your body. </b> </p>
+            </div>
+ <div class="product">
+                <img src="product3.webp" alt="Product 3">
+            </br>
+                <p> <b>    </br> Energetic, yet pure-for an amazing  experience. </b> </p>
+            </div>
+        </div>
+    </section>
+    
+
+ <div class="footer">
+    <h3>Do you have any concerns?</h3>
+    <p><strong>Contact No:</strong> (+63) 9108673820</br>
+    <strong>Email:</strong> neil061809@gmail.com</br>
+    <strong>Address:</strong> Barangay Marawoy, Lipa City, Batangas, Philippines</br> </p>
+    <p2> </br> <strong> © 2025 Clawer™ by CL*C intl. All Rights Reserved. </strong> </p2>
+</br>
+</br>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.style.opacity = "1";
+            document.body.style.transform = "translateY(0)";
+            document.querySelector(".hero-content").style.opacity = "1";
+            document.querySelector(".hero-content").style.transform = "translateY(0)";
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(document.querySelector(".product-section"));
+        });
+        function playClick() {
+                const audio = new Audio("btn.mp3");
+                audio.play();
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll("a");
+        links.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault(); 
+                let href = this.getAttribute("href");
+                
+                document.body.classList.add("fade-out");
+                
+                setTimeout(() => {
+                    window.location.href = href; 
+                }, 700); 
+            });
+        });
+    });
+    </script>
+
+</body>
+</html> 
