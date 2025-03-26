@@ -233,19 +233,19 @@
 
     <div class="products-container">
         <div class="product-card">
-            <img src="product1.webp" alt="Clawer Yellow">
-            <p class="product-title"><strong></br>Clawer™ Yellow</br></br></strong></p>
-            <button class="btn" onclick="openModal('cartModal', 'Clawer™ Yellow')" onclick="playClick()">Add to Cart</button>
+            <img src="product4.png" alt="Clawer Yellow Powder">
+            <p class="product-title"><strong></br>Clawer™ Yellow Powder</br></br></strong></p>
+            <button class="btn" onclick="openModal('cartModal', 'Clawer™ Yellow Powder')" onclick="playClick()">Add to Cart</button>
         </div>
         <div class="product-card">
-            <img src="product2.webp" alt="Clawer Blue">
-            <p class="product-title"><strong></br>Clawer™ Blue</br></br></strong></p>
-            <button class="btn" onclick="openModal('cartModal', 'Clawer™ Blue')" onclick="playClick()">Add to Cart</button>
+            <img src="product5.png" alt="Clawer Blue">
+            <p class="product-title"><strong></br>Clawer™ Blue Powder</br></br></strong></p>
+            <button class="btn" onclick="openModal('cartModal', 'Clawer™ Blue Powder')" onclick="playClick()">Add to Cart</button>
         </div>
         <div class="product-card">
-            <img src="product3.webp" alt="Clawer Clear">
-            <p class="product-title"><strong></br>Clawer™ Clear</br></br></strong></p>
-            <button class="btn" onclick="openModal('cartModal', 'Clawer™ Clear')" onclick="playClick()">Add to Cart</button>
+            <img src="product6.png" alt="Clawer Clear Powder">
+            <p class="product-title"><strong></br>Clawer™ Clear Powder</br></br></strong></p>
+            <button class="btn" onclick="openModal('cartModal', 'Clawer™ Clear Powder')" onclick="playClick()">Add to Cart</button>
         </div>
     </div>
 
@@ -255,9 +255,9 @@
         <p id="productName"></p>
         <label>Size:</label>
         <select id="size">
-            <option value="500ml">500ml - $1.00</option>
-            <option value="1L">1L - $2.00</option>
-            <option value="2L">2L - $3.50</option>
+            <option value="150g">150g - $8.00</option>
+            <option value="350g">350g - $14.00</option>
+            <option value="500g">500g - $20.00</option>
         </select>
         <br><br>
         <label>Quantity:</label>
@@ -276,7 +276,7 @@
 
 <div class="page-navigation">
         <span class="nav-arrow" onclick="window.location.href='products.html'" onclick="playClick()">&#10094;</span>
-        <span class="page-indicator">Page 1</span>
+        <span class="page-indicator">Page 2</span>
         <span class="nav-arrow" onclick="window.location.href='products-pwd.html'" onclick="playClick()">&#10095;</span>
     </div>
 
@@ -307,7 +307,7 @@
             let product = document.getElementById('productName').innerText;
             let size = document.getElementById('size').value;
             let quantity = parseInt(document.getElementById('quantity').value);
-            let priceMap = { "500ml": 1.00, "1L": 2.00, "2L": 3.50 };
+            let priceMap = { "150g": 8.00, "350g": 14.00, "500g": 20.00 };
             let price = priceMap[size] * quantity;
 
             let cart = JSON.parse(localStorage.getItem("cart")) || [];

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clawer™ - Checkout</title>
-<link rel="icon" type="image/x-icon" href="CL-LOGO.png">
+<link rel="icon" type="image/x-icon" href="CL_LOGO.ico">
     <style>
         * {
             margin: 1px;
@@ -227,24 +227,24 @@
         <h3><strong>Subtotal: $</strong><span id="subtotal-price">0.00</span></h3>
         <h3><strong>Tax (10%): $</strong><span id="tax-price">0.00</span></h3>
         <h3><strong>Total: $</strong><span id="total-price">0.00</span></h3>
-        <button class="btn" onclick="checkout()">Place Order</button>
-        <button class="btn" onclick="clearCart()">Clear Cart</button>
+        <button class="btn" onclick="checkout()" onclick="playClick()">Place Order</button>
+        <button class="btn" onclick="clearCart()" onclick="playClick()">Clear Cart</button>
     </section>
 
     <!-- Order Confirmation Modal -->
     <div id="orderModal" class="modal">
-        <span class="close-btn" onclick="closeModal('orderModal')">×</span>
+        <span class="close-btn" onclick="closeModal('orderModal')" onclick="playClick()">×</span>
         <h2>Order Placed Successfully!</h2>
         <p>Thank you for your purchase.</p>
-        <button class="btn" onclick="closeModal('orderModal')">OK</button>
+        <button class="btn" onclick="closeModal('orderModal')" onclick="playClick()">OK</button>
     </div>
 
     <!-- Empty Cart Modal -->
     <div id="emptyCartModal" class="modal">
-        <span class="close-btn" onclick="closeModal('emptyCartModal')">×</span>
+        <span class="close-btn" onclick="closeModal('emptyCartModal')" onclick="playClick()">×</span>
         <h2>Your Cart is Empty</h2>
         <p>Please add items before proceeding to checkout.</p>
-        <button class="btn" onclick="closeModal('emptyCartModal')">OK</button>
+        <button class="btn" onclick="closeModal('emptyCartModal')" onclick="playClick()">OK</button>
     </div>
 
     <script>
