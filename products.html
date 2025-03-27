@@ -295,12 +295,16 @@
             document.getElementById('overlay').style.display = 'block';
             if (productName) {
                 document.getElementById('productName').innerText = productName;
+const audio = new Audio("btn.mp3");
+                audio.play();
             }
         }
 
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
             document.getElementById('overlay').style.display = 'none';
+const audio = new Audio("btn.mp3");
+                audio.play();
         }
 
         function addToCart() {
